@@ -8,7 +8,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu toggle
 
   return (
-    <nav className="w-full bg-white shadow-lg">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
+      {" "}
+      {/* Fixed position added */}
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo and Category */}
         <div className="flex gap-6 items-center">
@@ -110,7 +112,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
       {/* Mobile Menu (shown when open) */}
       {isOpen && (
         <div className="md:hidden flex flex-col items-center bg-white shadow-lg">
