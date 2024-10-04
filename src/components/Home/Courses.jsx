@@ -71,7 +71,7 @@ const Courses = () => {
     <div className="grid grid-cols-3 gap-10 container">
       {courses.map((course) => (
         <div key={course.id} className="">
-          <div className="flex rounded-lg overflow-hidden shadow-md w-[300px] p-7 gap-5 hover:bg-blue-600 transition-all duration-500">
+          <div className="flex group border border-gray-400 rounded-lg overflow-hidden shadow-md w-[300px] p-7 gap-5 hover:bg-blue-600 transition-all duration-500">
             <div>
               {" "}
               <Image
@@ -81,10 +81,12 @@ const Courses = () => {
               />
             </div>
             <div className="">
-              <h3 className="text-black text-2xl font-bold tracking-widest">
+              <h3 className="text-black tracking-normal group-hover:text-white text-2xl font-bold ">
                 {course.title}
               </h3>
-              <p className="text-black text-xs">{course.description}</p>
+              <p className="text-black group-hover:text-white text-xs">
+                {course.description}
+              </p>
             </div>
           </div>
         </div>
