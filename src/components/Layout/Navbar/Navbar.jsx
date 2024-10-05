@@ -3,10 +3,14 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import logo1 from "../../../image/home/logo (1).png";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // Import usePathname
+import { SvgBlackIcon } from "@/components/untility/SvgBlackIcon";
+import { SvgWhiteIcon } from "@/components/untility/SvgWhiteIcon";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu toggle
   const [isScrolled, setIsScrolled] = useState(false); // For scroll background change
+  const pathname = usePathname(); // Get the current route using usePathname
 
   // Detect scroll position and update state
   useEffect(() => {
@@ -24,45 +28,136 @@ const Navbar = () => {
     };
   }, []);
 
+  // Determine if the current page is the home page
+  const isHomePage = pathname === "/"; // Check the current path
+
+  console.log("path", isHomePage, isScrolled);
+
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[200] shadow-lg overflow-hidden transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-[800]  overflow-hidden transition-all duration-300 ${
         isScrolled ? "bg-white opacity-100" : "bg-transparent opacity-100"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center p-4">
+      <div className="container mx-auto flex justify-between items-center h-[80px]">
         {/* Logo and Category */}
-        <div className="flex gap-6 items-center">
+        <div className="flex gap-8 items-center justify-between">
           <Image className="w-[120px]" src={logo1} alt="Logo" />
-          <p className="text-xl font-bold hidden md:block">Category</p>
+          <div
+            className={`w-[1.5px] h-[25px] ${
+              isScrolled ? "bg-gray-500" : "bg-gray-200"
+            }`}
+          ></div>
+
+          <div className="flex justify-end items-center gap-3">
+            <div className=" w-[19px] h-[18px]">
+              {isScrolled && isHomePage ? <SvgBlackIcon /> : null}
+              {!isScrolled && isHomePage ? <SvgBlackIcon /> : null}
+              {isScrolled && !isHomePage ? <SvgBlackIcon /> : null}
+              {!isScrolled && !isHomePage ? <SvgWhiteIcon /> : null}
+            </div>
+            <p
+              className={`text-[16px] font-bold hidden md:block ${
+                isScrolled && isHomePage ? "text_black" : ""
+              } 
+                ${!isScrolled && isHomePage ? "text_black" : ""} 
+                ${isScrolled && !isHomePage ? "text_black" : ""} 
+                ${!isScrolled && !isHomePage ? "text_white" : ""}
+              `}
+            >
+              Category
+            </p>
+          </div>
         </div>
 
         {/* Links (hidden on small screens, shown on larger screens) */}
         <div className="hidden md:flex items-center gap-6 text-lg font-semibold">
           <Link href="/">
-            <p className="text-sm font-semibold hover:text-gray-800">Home</p>
+            <p
+              className={`text-sm font-semibold hover:text-gray-800 ${
+                isScrolled && isHomePage ? "text_black" : ""
+              } 
+                ${!isScrolled && isHomePage ? "text_black" : ""} 
+                ${isScrolled && !isHomePage ? "text_black" : ""} 
+                ${!isScrolled && !isHomePage ? "text_white" : ""}
+              `}
+            >
+              Home
+            </p>
           </Link>
           <Link href="/Courses">
-            <p className="text-sm font-semibold hover:text-gray-800">Courses</p>
+            <p
+              className={`text-sm font-semibold hover:text-gray-800 ${
+                isScrolled && isHomePage ? "text_black" : ""
+              } 
+                ${!isScrolled && isHomePage ? "text_black" : ""} 
+                ${isScrolled && !isHomePage ? "text_black" : ""} 
+                ${!isScrolled && !isHomePage ? "text_white" : ""}
+              `}
+            >
+              Courses
+            </p>
           </Link>
           <Link href="/Blog">
-            <p className="text-sm font-semibold hover:text-gray-800">Blog</p>
+            <p
+              className={`text-sm font-semibold hover:text-gray-800 ${
+                isScrolled && isHomePage ? "text_black" : ""
+              } 
+                ${!isScrolled && isHomePage ? "text_black" : ""} 
+                ${isScrolled && !isHomePage ? "text_black" : ""} 
+                ${!isScrolled && !isHomePage ? "text_white" : ""}
+              `}
+            >
+              Blog
+            </p>
           </Link>
           <Link href="/Pages">
-            <p className="text-sm font-semibold hover:text-gray-800">Pages</p>
+            <p
+              className={`text-sm font-semibold hover:text-gray-800 ${
+                isScrolled && isHomePage ? "text_black" : ""
+              } 
+                ${!isScrolled && isHomePage ? "text_black" : ""} 
+                ${isScrolled && !isHomePage ? "text_black" : ""} 
+                ${!isScrolled && !isHomePage ? "text_white" : ""}
+              `}
+            >
+              Pages
+            </p>
           </Link>
           <Link href="/Contact">
-            <p className="text-sm font-semibold hover:text-gray-800">Contact</p>
+            <p
+              className={`text-sm font-semibold hover:text-gray-800 ${
+                isScrolled && isHomePage ? "text_black" : ""
+              } 
+                ${!isScrolled && isHomePage ? "text_black" : ""} 
+                ${isScrolled && !isHomePage ? "text_black" : ""} 
+                ${!isScrolled && !isHomePage ? "text_white" : ""}
+              `}
+            >
+              Contact
+            </p>
           </Link>
         </div>
 
         {/* Search, Cart, Button */}
         <div className="hidden md:flex items-center space-x-4">
           {/* Search Input */}
-          <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2 space-x-2">
+          <div
+            className={`flex items-center  rounded-lg px-3 py-2 space-x-2 ${
+              !isScrolled && !isHomePage
+                ? "flex items-center bg-transparent border rounded-lg px-3 py-2 space-x-2"
+                : "border-2 border-blue-700"
+            } ${
+              isScrolled &&
+              isHomePage &&
+              "flex items-center bg-gray-100 rounded-lg px-3 py-2 space-x-2"
+            }`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-gray-400"
+              className={`h-5 w-5 text-gray-400 ${
+                !isScrolled && !isHomePage ? "text-white" : ""
+              }`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -77,7 +172,11 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="bg-transparent outline-none text-gray-600"
+              className={` bg-transparent outline-none  ${
+                !isScrolled && !isHomePage
+                  ? "text-white placeholder:text-white"
+                  : "text-gray-600 placeholder:text-gray-600 "
+              } `}
             />
           </div>
 
@@ -85,7 +184,9 @@ const Navbar = () => {
           <div className="relative">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-gray-600"
+              className={`h-6 w-6 text-gray-600 ${
+                !isHomePage && !isScrolled ? "text-white" : ""
+              }`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -97,8 +198,8 @@ const Navbar = () => {
                 d="M3 3h2l.4 2M7 13h10l3.6-7H6.4M7 13l-1.2 4.6a1 1 0 00.9 1.4h12.6a1 1 0 00.9-1.4L17 13M7 13h10M10 17h4m-1 0v2m-2 0v2"
               />
             </svg>
-            <span className="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full px-1 text-xs">
-              0
+            <span className="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full px-[6px] font-bold text-xs">
+              2
             </span>
           </div>
 

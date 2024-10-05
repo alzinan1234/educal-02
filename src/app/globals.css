@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.maxWidth {
+  max-width: 1450px !important;
+  margin: 0 auto !important;
+}
+
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -14,4 +19,14 @@
 
 .hover-card :hover {
   border-left: 4px solid blue;
+}
+
+.text_black {
+  color: #000 !important;
+}
+.text_blacks {
+  color: #000 !important;
+}
+.text_white {
+  color: #fff !important;
 }
