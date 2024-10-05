@@ -1,14 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import dataScienceImg from "../../image/home/data-science.png";
-import business from "../../image/home/business-image_3655046.jpg"; // Importing the image directly
-import art from "../../image/home/art.jpeg"; // Importing the image directly
-import lifestyle from "../../image/home/lifestyle-logo-png.png"; // Importing the image directly
-import markiting from "../../image/home/markiting.jpg"; // Importing the image directly
-import Finance from "../../image/home/Finance.webp"; // Importing the image directly
-import fitness from "../../image/home/fitness.webp"; // Importing the image directly
-import Music from "../../image/home/Music_logo.png"; // Importing the image directly
-import academic from "../../image/home/academic.webp"; // Importing the image directly
+import business from "../../image/home/business-image_3655046.jpg";
+import art from "../../image/home/art.jpeg";
+import lifestyle from "../../image/home/lifestyle-logo-png.png";
+import markiting from "../../image/home/markiting.jpg";
+import Finance from "../../image/home/Finance.webp";
+import fitness from "../../image/home/fitness.webp";
+import Music from "../../image/home/Music_logo.png";
+import academic from "../../image/home/academic.webp";
 
 const Courses = () => {
   const courses = [
@@ -27,7 +27,7 @@ const Courses = () => {
     {
       id: 3,
       image: art,
-      title: "Art&Design",
+      title: "Art & Design",
       description: "Fun & Challenging",
     },
     {
@@ -51,8 +51,8 @@ const Courses = () => {
     {
       id: 7,
       image: fitness,
-      title: " Fitness",
-      description: "Invest to Your Body",
+      title: "Fitness",
+      description: "Invest in Your Body",
     },
     {
       id: 8,
@@ -67,30 +67,34 @@ const Courses = () => {
       description: "High Education Level",
     },
   ];
+
   return (
-    <div className="grid grid-cols-3 gap-10 container">
-      {courses.map((course) => (
-        <div key={course.id} className="">
-          <div className="flex group border border-gray-400 rounded-lg overflow-hidden shadow-md w-[300px] p-7 gap-5 hover:bg-blue-600 transition-all duration-500">
-            <div>
-              {" "}
-              <Image
-                alt={course.title}
-                className="w-[50px]  "
-                src={course.image}
-              />
-            </div>
-            <div className="">
-              <h3 className="text-black tracking-normal group-hover:text-white text-2xl font-bold ">
-                {course.title}
-              </h3>
-              <p className="text-black group-hover:text-white text-xs">
-                {course.description}
-              </p>
+    <div className="container mx-auto p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {courses.map((course) => (
+          <div key={course.id} className="flex flex-col items-center">
+            <div className="group border border-gray-300 rounded-lg overflow-hidden shadow-lg p-6 hover:bg-blue-600 transition-all duration-500 w-full max-w-[300px]">
+              <div className="mb-4 flex justify-center">
+                <Image
+                  alt={course.title}
+                  className="w-[50px] object-contain"
+                  src={course.image}
+                  width={50}
+                  height={50}
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="text-black text-lg md:text-xl font-bold group-hover:text-white">
+                  {course.title}
+                </h3>
+                <p className="text-gray-600 text-sm md:text-base group-hover:text-white">
+                  {course.description}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
