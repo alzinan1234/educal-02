@@ -1,16 +1,35 @@
 "use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import logo1 from "../../../image/home/logo (1).png";
 import Link from "next/link";
-import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu toggle
+  const [isScrolled, setIsScrolled] = useState(false); // For scroll background change
+
+  // Detect scroll position and update state
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true); // Navbar background becomes white after scrolling down
+      } else {
+        setIsScrolled(false); // Navbar background is transparent at the top
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
-      {" "}
-      {/* Fixed position added */}
+    <nav
+      className={`fixed top-0 left-0 w-full z-[200] shadow-lg overflow-hidden transition-all duration-300 ${
+        isScrolled ? "bg-white opacity-100" : "bg-transparent opacity-100"
+      }`}
+    >
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo and Category */}
         <div className="flex gap-6 items-center">
@@ -112,6 +131,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
       {/* Mobile Menu (shown when open) */}
       {isOpen && (
         <div className="md:hidden flex flex-col items-center bg-white shadow-lg">
