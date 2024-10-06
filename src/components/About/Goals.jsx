@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import Image from "next/image";
 import image1 from "../../image/about/about.jpg"; // Add your actual image path
 import image2 from "../../image/about/about-banner.jpg";
@@ -11,62 +10,62 @@ import text_bg from "@/image/home/yellow-bg.png";
 
 const Goals = () => {
   return (
-    <div className="py-10 flex gap-8 items-center">
+    <div className="py-10 px-4 flex flex-col md:flex-row gap-8 items-center">
       {/* Left Section with Images */}
-      <div className="flex relative  h-[100%] flex-col justify-end items-center md:w-[50%]">
-        <div className="flex flex-col w-[100%] justify-end items-center">
+      <div className="flex relative h-full flex-col justify-end items-center md:w-[50%]">
+        <div className="flex flex-col w-full justify-end items-center">
           <Image
             src={image2}
             width={280}
             height={220}
             alt="Banner Image"
-            className="rounded-lg flex h-[312px] w-[260px] absolute bottom-[-1px] left-[125px]"
+            className="rounded-lg h-[312px] w-[260px] absolute bottom-[-10px] left-[50px] md:left-[125px]"
           />
-          <div className="flex flex-col justify-end w-[100%] ">
-            <div className="flex justify-end">
+          <div className="flex flex-col justify-end w-full">
+            <div className="flex justify-center md:justify-end">
               <Image
                 src={image1}
                 width={480}
                 height={480}
                 alt="Course Image"
-                className="rounded-lg w-[480px] h-[530px] "
+                className="rounded-lg w-[300px] h-[350px] md:w-[480px] md:h-[530px]"
               />
             </div>
-            <div className="profile_content flex justify-end w-[100%]  ">
-              <div className="flex flex-col w-[100%] py-3">
-                <div className="flex justify-end md:me-32 mx-auto items-center w-[160px] relative h-[50px]">
+            <div className="profile_content flex justify-center md:justify-end w-full">
+              <div className="flex flex-col w-full py-3">
+                <div className="flex justify-center md:justify-end md:mr-32 mx-auto items-center w-[160px] relative h-[50px]">
                   <Image
                     width={40}
-                    hight={40}
+                    height={40}
                     className="rounded-full absolute left-1"
                     src={profileS1}
-                    alt=""
+                    alt="Student Profile"
                   />
                   <Image
                     width={40}
-                    hight={40}
+                    height={40}
                     className="rounded-full absolute left-[30px] z-10"
                     src={profileS2}
-                    alt=""
+                    alt="Student Profile"
                   />
                   <Image
                     width={40}
-                    hight={40}
+                    height={40}
                     className="rounded-full absolute left-[60px] z-10"
                     src={profileS3}
-                    alt=""
+                    alt="Student Profile"
                   />
                   <Image
                     width={40}
-                    hight={40}
+                    height={40}
                     className="rounded-full absolute left-[90px] z-10"
                     src={profileS4}
-                    alt=""
+                    alt="Student Profile"
                   />
                 </div>
-                <div className="d ps-4 flex  justify-end md:me-[100px]">
+                <div className="d ps-4 flex justify-center md:justify-end md:mr-[100px]">
                   <h1 className="font-semibold text-gray-500">
-                    join over <b>4.000+</b> student
+                    Join over <b>4,000+</b> students
                   </h1>
                 </div>
               </div>
@@ -74,13 +73,16 @@ const Goals = () => {
           </div>
         </div>
       </div>
+
       {/* Right Section with Content */}
-      <div className="w-full md:w-[50%] h-[100%]">
-        <h2 className="text-[40px] font-bold text-gray-900 relative">
+      <div className="w-full md:w-[50%] h-full">
+        <h2 className="text-[32px] md:text-[40px] font-bold text-gray-900 relative">
           <Image
-            className="absolute bottom-[3px] z-[-12] left-[-20px] leFadeInLeft "
+            className="absolute bottom-0 md:bottom-[3px] z-[-12] left-[-10px] md:left-[-20px] leFadeInLeft"
             src={text_bg}
-            alt="Sliding Image"
+            alt="Background"
+            width={180}
+            height={40}
           />
           Achieve Your <br className="hidden md:block" /> Goals With Educal
         </h2>
