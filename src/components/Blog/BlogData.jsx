@@ -105,14 +105,15 @@ const courseData = [
 const BlogData = () => {
   return (
     <>
-      <div className="mt-4 ">
-        <div className=" container flex gap-24 ">
-          <div className=" w-[70%] mt-16 ">
-            <div className=" container  grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="mt-4">
+        <div className="container flex flex-col lg:flex-row gap-12 lg:gap-24">
+          {/* Main Content */}
+          <div className="w-full lg:w-[70%] mt-8 lg:mt-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {courseData.map((course) => (
                 <div
                   key={course.id}
-                  className="bg-white shadow-md rounded-lg  overflow-hidden"
+                  className="bg-white shadow-md rounded-lg overflow-hidden"
                 >
                   {/* Card Image */}
                   <Image
@@ -126,13 +127,13 @@ const BlogData = () => {
                   {/* Card Content */}
                   <div className="p-4">
                     <div
-                      className={`text-white text-sm px-3 py-1 inline-block  rounded-full ${course.categoryColor}`}
+                      className={`text-white text-sm px-3 py-1 inline-block rounded-full ${course.categoryColor}`}
                     >
                       {course.category}
                     </div>
                     <div className="flex justify-between items-center mt-2 text-gray-500">
                       <p>
-                        <i className="fa fa-book"></i> {course.lessons} Lesson
+                        <i className="fa fa-book"></i> {course.lessons} Lessons
                       </p>
                       <p>
                         <i className="fa fa-star text-yellow-500"></i>{" "}
@@ -173,7 +174,9 @@ const BlogData = () => {
               ))}
             </div>
           </div>
-          <div className=" w-[30%] mt-16 ">
+
+          {/* Sidebar */}
+          <div className="w-full lg:w-[30%] mt-8 lg:mt-16">
             <SideBar />
           </div>
         </div>

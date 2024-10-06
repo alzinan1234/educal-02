@@ -55,11 +55,16 @@ const SideBar = () => {
         </div>
 
         {/* Recent Posts */}
-        <h2 className=" mt-9 text-2xl font-semibold mb-4">Recent posts</h2>
+        <h2 className="mt-9 text-xl lg:text-2xl font-semibold mb-4">
+          Recent posts
+        </h2>
         <div className="space-y-4">
           {posts.map((post) => (
-            <div key={post.id} className="flex items-start gap-9">
-              <div className="w-40 h-24 relative rounded overflow-hidden">
+            <div
+              key={post.id}
+              className="flex flex-col lg:flex-row items-start gap-4 lg:gap-9"
+            >
+              <div className="w-full lg:w-40 h-24 relative rounded overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -69,7 +74,7 @@ const SideBar = () => {
               </div>
               <div>
                 <p className="text-sm text-gray-500">{post.date}</p>
-                <h3 className="text-base font-semibold text-gray-900">
+                <h3 className="text-base lg:text-lg font-semibold text-gray-900">
                   {post.title}
                 </h3>
               </div>
@@ -80,64 +85,67 @@ const SideBar = () => {
 
       <div>
         {/* Categories */}
-        <h2 className="mt-12 text-2xl font-semibold mb-4">Categories</h2>
+        <h2 className="mt-12 text-xl lg:text-2xl font-semibold mb-4">
+          Categories
+        </h2>
         <div className="flex flex-wrap gap-4">
-          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             All Courses
           </button>
-          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Web Development
           </button>
-          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Business
           </button>
-          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Marketing
           </button>
-          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Technology
           </button>
-          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Personal Development
           </button>
-          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold border border-gray-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Science
           </button>
         </div>
       </div>
+
       <div className="mt-10 mb-10">
-        {/* Categories */}
-        <h2 className="mt-12 text-2xl font-semibold mb-4">Tags</h2>
+        {/* Tags */}
+        <h2 className="mt-12 text-xl lg:text-2xl font-semibold mb-4">Tags</h2>
         <div className="flex flex-wrap gap-4">
-          <button className="py-2 px-4 text-sm font-semibold border  rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold border rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Art & Design
           </button>
-          <button className="py-2 px-4 text-sm font-semibold  bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Course
           </button>
-          <button className="py-2 px-4 text-sm font-semibold  bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Videos
           </button>
-          <button className="py-2 px-4 text-sm font-semibold  bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             App
           </button>
-          <button className="py-2 px-4 text-sm font-semibold  bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Education
           </button>
-          <button className="py-2 px-4 text-sm font-semibold  bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Data Science
           </button>
-          <button className="py-2 px-4 text-sm font-semibold  bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Machine Learning
           </button>
-          <button className="py-2 px-4 text-sm font-semibold  bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700">
+          <button className="py-2 px-4 text-sm font-semibold bg-slate-300 rounded-md hover:bg-gray-100 hover:text-gray-700 w-full lg:w-auto">
             Tips
           </button>
         </div>
       </div>
 
-      <div className="mt-28 flex items-center ">
-        <Image src={Banner2} alt=""></Image>
+      <div className="mt-28 flex items-center justify-center">
+        <Image src={Banner2} alt="" className="w-full lg:w-auto" />
       </div>
     </>
   );
