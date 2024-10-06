@@ -20,13 +20,16 @@ const Companies = () => {
   ];
 
   const settings = {
-    dots: false, // Disable dots if not needed
-    infinite: true,
+    dots: true, // Disable dots if not needed
+    infinite: true, // Ensure infinite scrolling
     speed: 500,
     slidesToShow: 6, // Number of logos visible at a time
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000, // Set autoplay speed (2 seconds)
+    autoplaySpeed: 1000, // Autoplay speed (1 second)
+    pauseOnHover: false, // Don't pause on hover
+    pauseOnFocus: false, // Don't pause on focus
+    pauseOnDotsHover: false, // Don't pause on dot hover
     responsive: [
       {
         breakpoint: 1024, // Tablet view
@@ -50,24 +53,26 @@ const Companies = () => {
   };
 
   return (
-    <div className="container py-4">
-      <Slider {...settings}>
-        {companies.map((company) => (
-          <div
-            key={company.id}
-            className="flex justify-center items-center p-5"
-          >
-            <Image
-              className="w-24 h-24 object-contain"
-              src={company.logo}
-              alt={`Company Logo ${company.id}`}
-              width={100}
-              height={100} // Set image size explicitly for better control
-            />
-          </div>
-        ))}
-      </Slider>
-    </div>
+    <>
+      <div className="container py-4">
+        <Slider {...settings}>
+          {companies.map((company) => (
+            <div
+              key={company.id}
+              className="flex justify-center items-center p-5"
+            >
+              <Image
+                className="w-24 h-24 object-contain"
+                src={company.logo}
+                alt={`Company Logo ${company.id}`}
+                width={100}
+                height={100} // Set image size explicitly for better control
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </>
   );
 };
 
