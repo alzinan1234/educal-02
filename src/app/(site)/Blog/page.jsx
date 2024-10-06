@@ -1,5 +1,6 @@
 import BlogBanner from "@/components/Blog/BlogBanner";
 import BlogData from "@/components/Blog/BlogData";
+import Next from "@/components/Blog/Next";
 import React from "react";
 
 const Blog = () => {
@@ -7,6 +8,7 @@ const Blog = () => {
     <div>
       <BlogBanner />
       <BlogData />
+      <Next />
     </div>
   );
 };
