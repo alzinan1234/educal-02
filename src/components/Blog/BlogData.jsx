@@ -100,108 +100,82 @@ const courseData = [
     price: "$32.00",
     oldPrice: "$68",
   },
-  {
-    id: 7,
-    category: "Business",
-    categoryColor: "bg-green-600",
-    lessons: 90,
-    rating: 4.2,
-    reviews: 78,
-    title: "Fundamentals of music theory Learn new",
-    author: "Barry Tone",
-    authorImage: teacher6,
-    image: course6,
-    price: "$32.00",
-    oldPrice: "$68",
-  },
-  {
-    id: 8,
-    category: "Business",
-    categoryColor: "bg-green-600",
-    lessons: 90,
-    rating: 4.2,
-    reviews: 78,
-    title: "Fundamentals of music theory Learn new",
-    author: "Barry Tone",
-    authorImage: teacher6,
-    image: course6,
-    price: "$32.00",
-    oldPrice: "$68",
-  },
 ];
 
 const BlogData = () => {
   return (
     <>
-      <div className="container flex gap-28">
-        <div className="mt-16 mb-16">
-          <div className=" container  grid grid-cols-1 md:grid-cols-2 gap-6">
-            {courseData.map((course) => (
-              <div
-                key={course.id}
-                className="bg-white shadow-md rounded-lg  overflow-hidden"
-              >
-                {/* Card Image */}
-                <Image
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-[200px] object-cover"
-                  width={500}
-                  height={400}
-                />
+      <div className="mt-4 ">
+        <div className=" container flex gap-24 ">
+          <div className=" w-[70%] mt-16 ">
+            <div className=" container  grid grid-cols-1 md:grid-cols-2 gap-6">
+              {courseData.map((course) => (
+                <div
+                  key={course.id}
+                  className="bg-white shadow-md rounded-lg  overflow-hidden"
+                >
+                  {/* Card Image */}
+                  <Image
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-[200px] object-cover"
+                    width={500}
+                    height={400}
+                  />
 
-                {/* Card Content */}
-                <div className="p-4">
-                  <div
-                    className={`text-white text-sm px-3 py-1 inline-block  rounded-full ${course.categoryColor}`}
-                  >
-                    {course.category}
-                  </div>
-                  <div className="flex justify-between items-center mt-2 text-gray-500">
-                    <p>
-                      <i className="fa fa-book"></i> {course.lessons} Lesson
-                    </p>
-                    <p>
-                      <i className="fa fa-star text-yellow-500"></i>{" "}
-                      {course.rating} ({course.reviews})
-                    </p>
-                  </div>
-
-                  <h3 className="text-lg font-bold mt-2">{course.title}</h3>
-
-                  {/* Author Section */}
-                  <div className="flex items-center mt-4">
-                    <Image
-                      src={course.authorImage}
-                      alt={course.author}
-                      className="w-8 h-8 rounded-full"
-                      width={40}
-                      height={40}
-                    />
-                    <p className="ml-2">{course.author}</p>
-                  </div>
-
-                  {/* Price Section */}
-                  <div className="flex justify-between items-center mt-4">
-                    <div className="text-blue-600 font-bold">
-                      {course.price}
-                      {course.oldPrice && (
-                        <span className="text-gray-500 line-through ml-2">
-                          {course.oldPrice}
-                        </span>
-                      )}
+                  {/* Card Content */}
+                  <div className="p-4">
+                    <div
+                      className={`text-white text-sm px-3 py-1 inline-block  rounded-full ${course.categoryColor}`}
+                    >
+                      {course.category}
                     </div>
-                    <button className="text-blue-600 hover:text-blue-800">
-                      Know Details <i className="fa fa-arrow-right-long"></i>
-                    </button>
+                    <div className="flex justify-between items-center mt-2 text-gray-500">
+                      <p>
+                        <i className="fa fa-book"></i> {course.lessons} Lesson
+                      </p>
+                      <p>
+                        <i className="fa fa-star text-yellow-500"></i>{" "}
+                        {course.rating} ({course.reviews})
+                      </p>
+                    </div>
+
+                    <h3 className="text-lg font-bold mt-2">{course.title}</h3>
+
+                    {/* Author Section */}
+                    <div className="flex items-center mt-4">
+                      <Image
+                        src={course.authorImage}
+                        alt={course.author}
+                        className="w-8 h-8 rounded-full"
+                        width={40}
+                        height={40}
+                      />
+                      <p className="ml-2">{course.author}</p>
+                    </div>
+
+                    {/* Price Section */}
+                    <div className="flex justify-between items-center mt-4">
+                      <div className="text-blue-600 font-bold">
+                        {course.price}
+                        {course.oldPrice && (
+                          <span className="text-gray-500 line-through ml-2">
+                            {course.oldPrice}
+                          </span>
+                        )}
+                      </div>
+                      <button className="text-blue-600 hover:text-blue-800">
+                        Know Details <i className="fa fa-arrow-right-long"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="mt-16 mb-16">
-          <SideBar />
+          <div className=" w-[30%] mt-16 ">
+            <SideBar />
+          </div>
         </div>
       </div>
     </>

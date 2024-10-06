@@ -111,7 +111,7 @@ const Navbar = () => {
               Blog
             </p>
           </Link>
-          <Link href="/Pages">
+          <Link href="/About">
             <p
               className={`text-sm font-semibold hover:text-gray-800 ${
                 isScrolled && isHomePage ? "text_black" : ""
@@ -121,7 +121,7 @@ const Navbar = () => {
                 ${!isScrolled && !isHomePage ? "text_white" : ""}
               `}
             >
-              Pages
+              About
             </p>
           </Link>
           <Link href="/Contact">
@@ -251,9 +251,9 @@ const Navbar = () => {
               Blog
             </p>
           </Link>
-          <Link href="/Pages">
+          <Link href="/About">
             <p className="py-2 text-sm font-semibold hover:text-gray-800">
-              Pages
+              About
             </p>
           </Link>
           <Link href="/Contact">
