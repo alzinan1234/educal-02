@@ -49,7 +49,10 @@ const Events = () => {
           {events.map((event) => (
             <div
               key={event.id}
-              className="flex  justify-between items-center hover:border-x-8 border-x-blue-600  transition-all duration-400  bg-white shadow-md p-6 rounded-lg  "
+              className="flex  justify-between items-center hover:border-x-8 border-x-blue-600  transition-all duration-400  bg-white shadow-md p-6 rounded-lg"
+              data-aos="zoom-in"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
             >
               <div className="flex flex-col gap-4">
                 <div className="flex gap-2 items-center text-sm sm:text-base mb-2">

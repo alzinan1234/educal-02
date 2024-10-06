@@ -21,6 +21,9 @@ const OtherBanner = () => {
               overflow: "hidden",
             }}
             className="flex flex-col lg:flex-row justify-between items-center p-8 lg:p-14 rounded-lg w-full lg:w-1/2"
+            data-aos="zoom-in"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
           >
             <div className="flex flex-col gap-3 lg:gap-5 text-center lg:text-left">
               <button className="bg-pink-600 w-[70px] text-white px-1 py-1 rounded-3xl hover:bg-blue-700 transition duration-300">
@@ -53,6 +56,9 @@ const OtherBanner = () => {
               overflow: "hidden",
             }}
             className="flex flex-col lg:flex-row justify-between items-center p-8 lg:p-14 rounded-lg w-full lg:w-1/2"
+            data-aos="zoom-in"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
           >
             <div className="flex flex-col gap-3 lg:gap-5 text-center lg:text-left">
               <button className="bg-orange-700 w-[70px] text-white px-1 py-1 rounded-3xl hover:bg-blue-700 transition duration-300">

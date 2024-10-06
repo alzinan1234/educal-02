@@ -2,11 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes leFadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translatey(10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translatey(3px);
+  }
+  40% {
+    opacity: 1;
+    transform: translatey(1px);
+  }
+  80% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+
+/* Applying the animation to the image */
+.leFadeInLeft {
+  animation: leFadeInLeft 8s ease-in-out infinite;
+}
+
 .maxWidth {
   max-width: 1450px !important;
   margin: 0 auto !important;
 }
 
+.borders {
+  border: 2px solid red;
+}
 .container {
   max-width: 1300px;
   margin: 0 auto;

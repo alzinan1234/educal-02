@@ -18,7 +18,12 @@ const Plan = () => {
   };
 
   return (
-    <div className="mt-14 mb-14">
+    <div
+      className="mt-14 mb-14"
+      data-aos="zoom-in"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+    >
       <div className="container mx-auto ">
         <div className="flex flex-col items-center">
           {/* Toggle between Monthly and Annual Plan */}
