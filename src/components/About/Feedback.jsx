@@ -56,7 +56,7 @@ const Feedback = () => {
               <div className="flex flex-col gap-2">
                 <p className="text-2xl">Course Outcome</p>
                 <p className="">
-                  Faff about A bit of how's your father getmate cack codswallop
+                  Faff about A bit of hows your father getmate cack codswallop
                   crikey argy-bargy cobblers lost his bottle.
                 </p>
               </div>
