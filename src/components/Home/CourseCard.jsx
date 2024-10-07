@@ -109,9 +109,6 @@ const CourseCard = () => {
           <div
             key={course.id}
             className="bg-white shadow-md rounded-lg relative overflow-hidden"
-            data-aos="zoom-in"
-            data-aos-easing="linear"
-            data-aos-duration="1500"
           >
             {/* Card Image */}
             <Image

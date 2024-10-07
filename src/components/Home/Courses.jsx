@@ -70,13 +70,7 @@ const Courses = () => {
   return (
     <div className="grid grid-cols-1 item-center justify-center md:grid-cols-3 gap-10 container">
       {courses.map((course) => (
-        <div
-          key={course.id}
-          className=""
-          data-aos="zoom-in"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        <div key={course.id} className="">
           <div className="flex group border border-gray-400 rounded-lg overflow-hidden shadow-md w-[300px] p-7 gap-5 hover:bg-blue-600 transition-all duration-500">
             <div>
               {" "}
